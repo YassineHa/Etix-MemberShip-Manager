@@ -21,9 +21,7 @@ class UsersCell: UITableViewCell {
         return imageView
     }()
     
-    
     override func layoutSubviews() {
-        
         super.layoutSubviews()
         
         // text label which conatins the User's Name
@@ -33,7 +31,6 @@ class UsersCell: UITableViewCell {
     // init method of the cell (contains all the constraints(autolayout))
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
-        
         addSubview(userImageView)
         
         // x,y,width,height anchors for the constraints
@@ -41,12 +38,9 @@ class UsersCell: UITableViewCell {
         userImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         userImageView.widthAnchor.constraint(equalToConstant: 48).isActive = true
         userImageView.heightAnchor.constraint(equalToConstant: 48).isActive = true
-        
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    
 }

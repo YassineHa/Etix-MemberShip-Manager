@@ -32,8 +32,6 @@ class MembershipsViewController: UIViewController, UITableViewDelegate, UITableV
     // the JSON response of the Alamofire Request
     var myResponse : JSON = nil
     
-   
-    
     override func viewDidLoad() {
         super.viewDidLoad()
  
@@ -48,17 +46,12 @@ class MembershipsViewController: UIViewController, UITableViewDelegate, UITableV
         
         // fetching all the Users of the selected Organization from the DB and displaying them through the TableView
         fetchAndAddUsersByOrganisation()
-        
     }
-
     
-    //_____________________________Table View Functions________________________________________________________________
-    
+    // Table View Functions
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return usersByOrganisation.count    // the number of rows in the table View
     }
-    
-    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -73,26 +66,21 @@ class MembershipsViewController: UIViewController, UITableViewDelegate, UITableV
         // display the name of the user
         cell.textLabel?.text = user.name
         
-        
         return cell
-        
-    }
+        }
     
     // set the height of a Cell
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
     
-    
     // if the row is edditable
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
     
-    
     // the swipe editiong Style for Delete
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        
         
         // the Url of the jsonObject to remove
         let deleteUrl = URL(string: "http://localhost:3000/memberships/\(membershipsByOrganisation[indexPath.row].id)")
@@ -118,13 +106,8 @@ class MembershipsViewController: UIViewController, UITableViewDelegate, UITableV
         // reload the data in the current tableView
         membershipsTableView.reloadData()
     
-    
     }
 
-    
-    //________________________________________________________________________________________________________________
-   
-    
     // parsing and fetching all the organization Users ( by looping the memberships and fetching the users list)
     func fetchAndAddUsersByOrganisation() {
         
@@ -159,34 +142,22 @@ class MembershipsViewController: UIViewController, UITableViewDelegate, UITableV
                                 DispatchQueue.main.async(execute: {self.membershipsTableView.reloadData();})
                                 
                             }
-                        
                         }
-                        
                     }
-     
-                    
                 }
                 
             case.failure(let error):
                 print("request failed with ",error)
             }
-            
         }
-        
-        
     }
     
-    
-    
-    
-    
     @IBAction func backAction(_ sender: Any) {
-        
+        Shared.sharedInstance.usersByOrganization.removeAll()
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let organisationsViewController = storyBoard.instantiateViewController(withIdentifier: "OrganisationsViewController") as! OrganisationsViewController
         self.present(organisationsViewController, animated: true, completion: nil)
     }
-    
     
     @IBAction func addUserAction(_ sender: Any) {
         
@@ -194,9 +165,5 @@ class MembershipsViewController: UIViewController, UITableViewDelegate, UITableV
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let usersViewController = storyBoard.instantiateViewController(withIdentifier: "UsersViewController") as! UsersViewController
         self.present(usersViewController, animated: true, completion: nil)
-  
     }
-    
-    
-
    }

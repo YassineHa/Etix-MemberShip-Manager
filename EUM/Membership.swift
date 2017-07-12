@@ -14,5 +14,4 @@ struct Membership {
     let id: Int                     // id of the membership
     let user_id: Int                // id of the user of a specific organization
     let organization_id: Int        // id of the Organization
-    
 }

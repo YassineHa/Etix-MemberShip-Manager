@@ -21,23 +21,17 @@ class OrganisationsCell: UITableViewCell {
         return imageView
     }()
     
-
     override func layoutSubviews() {
-       
         super.layoutSubviews()
         
         // text label which conatins the organization's Name
         textLabel?.frame = CGRect(x: 100, y: textLabel!.frame.origin.y - 2, width: textLabel!.frame.width, height: textLabel!.frame.height)
-        }
-    
+    }
     
     // init method of the cell (contains all the constraints(autolayout))
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
-        
         addSubview(organisationImageView)
-
-        
         
         // x,y,width,height anchors for the constraints
         organisationImageView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 20).isActive = true
@@ -45,10 +39,9 @@ class OrganisationsCell: UITableViewCell {
         organisationImageView.widthAnchor.constraint(equalToConstant: 48).isActive = true
         organisationImageView.heightAnchor.constraint(equalToConstant: 48).isActive = true
         
-          }
+    }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-  }
+}

@@ -7,24 +7,19 @@
 //
 
 import UIKit
-import Alamofire
-import SwiftyJSON
+
 
 // Users View Controller which displays the available users for the selected Organization
 class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
+    // the current View Model for the users for the MVVM patern
+    @IBOutlet var userViewModel : UserViewModel!
+    
     // the current TableView
     @IBOutlet weak var usersTableView: UITableView!
-   
-    // the JSON response of the Alamofire Request
-    var myResponse : JSON = nil
-    
-    // the list of all the available users of a specific Organization  to display
-    var users = [User]()
     
      // the cell identifier
     var cellId = "UsersCell"
-    
     
     override func viewDidLoad() {
         
@@ -34,38 +29,28 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
         usersTableView.register(UsersCell.self, forCellReuseIdentifier: cellId)
        
         //fetching all the available Users of the selected Organization from the DB and displaying them through the TableView
-        fetchAndAddUsers()
-      
+        userViewModel.fetchAvailableUsers{
+            DispatchQueue.main.async(execute: {self.usersTableView.reloadData();})
+        }
     }
-    
-    
-    
-    
-    
-    //_____________________________Table View Functions________________________________________________________________
+  
+    //_Table View Functions
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return users.count      // the number of rows in the table View
+        return userViewModel.numberOfItemsInSection(section: section)      // the number of rows in the table View
     }
-    
-    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         //init the cell as a UsersCell
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! UsersCell
         
-        let user = users[indexPath.row]
-        
         // display the default image
         cell.userImageView.image =  UIImage(named: "profile")
         
         // display the name of the user
-        cell.textLabel?.text = user.name
-        
-        
+        cell.textLabel?.text = userViewModel.titleForItemAtIndexPath(indexPath: indexPath)
         return cell
-        
     }
     
     // when a User is selected
@@ -76,10 +61,8 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let addingConfirmationViewController = storyBoard.instantiateViewController(withIdentifier: "AddingConfirmationViewController") as! AddingConfirmationViewController
 
         // updating  the current selected User into the shared instance selectdUser
-        Shared.sharedInstance.selectedUser = users[indexPath.row]
+        userViewModel.fillSharedSelectedUser(indexPath: indexPath)
         self.present(addingConfirmationViewController, animated: true, completion: nil)
-        
-
     }
     
     // set the height of a Cell
@@ -89,60 +72,7 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     
     
-    //________________________________________________________________________________________________________________
-    
-
-    
-    // parsing and fetching all the available Users ( by looping the subtract the shared list of users by selected Organization from all the users)
-    func fetchAndAddUsers() {
-
-        // simple alamofire Get request
-        Alamofire.request((Shared.sharedInstance.usersUrl)!).responseJSON { (response) in
-            
-            
-            switch response.result{
-            
-            // in case of request success
-            case.success(let data):
-                self.myResponse = JSON(data)
-                
-                //looping all the users
-                for item in self.myResponse.arrayValue {
-                    // fetching the userItem into its model
-                    let user = User(id: item["id"].intValue, name: item["name"].stringValue)
-                    
-                    //checking if the current list of users by selected organization  contains the user item (by comparing the ids)
-                    if(Shared.sharedInstance.usersByOrganization.contains(where: { $0.id == user.id })){
-                        
-                        
-                    }
-                    else{
-                        self.users.append(user)
-                        DispatchQueue.main.async(execute: {self.usersTableView.reloadData();})
-                        
-                    }
-                }
-             
-            // in case of request failure
-            case.failure(let error):
-                print("request failed with ",error)
-            }
-            
-            
-            
-        }
-        
-        
-    }
-    
-    
-    
-    
-    
     @IBAction func backAction(_ sender: Any) {
                  dismiss(animated: true, completion: nil)
     }
-    
-    
-    
 }

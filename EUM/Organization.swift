@@ -10,8 +10,7 @@ import UIKit
 
 // model of the organization (struct for passing by values and not by references)
 struct Organization {
-
+    
     let id: Int             //id of the organization
     let name: String        //name of the organization
-    
 }

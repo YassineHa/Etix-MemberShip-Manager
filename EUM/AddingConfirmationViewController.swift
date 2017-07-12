@@ -18,15 +18,10 @@ class AddingConfirmationViewController: UIViewController {
     @IBOutlet weak var confirmBtn: UIButton!
     @IBOutlet weak var warningText: UILabel!
     
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         initPopUpDisplay()
-  
     }
-    
     
     // init the design of the PopUp
     func  initPopUpDisplay() {
@@ -43,10 +38,7 @@ class AddingConfirmationViewController: UIViewController {
         confirmBtn.layer.masksToBounds = true
         
         warningText.text = "You are about to add the user \(Shared.sharedInstance.selectedUser.name.uppercased()) to the organisation \(Shared.sharedInstance.selectedOrganization.name.uppercased()) , to confirm tap the confirm button"
-        
-
     }
-    
     
     @IBAction func CancelAction(_ sender: Any) {
         dismiss(animated: true, completion: nil)
@@ -63,14 +55,10 @@ class AddingConfirmationViewController: UIViewController {
                 debugPrint(response)
         }
         
-        
         // returning the MemberShip view Controller
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let membershipsViewController = storyBoard.instantiateViewController(withIdentifier: "MembershipsViewController") as! MembershipsViewController
-        
         self.present(membershipsViewController, animated: true, completion: nil)
         
-        
     }
-
 }

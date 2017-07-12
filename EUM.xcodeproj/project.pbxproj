@@ -23,6 +23,9 @@
 		3DCBEFEE1F14C351001AF477 /* EUMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCBEFED1F14C351001AF477 /* EUMTests.swift */; };
 		3DCBEFF91F14C351001AF477 /* EUMUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCBEFF81F14C351001AF477 /* EUMUITests.swift */; };
 		3DCBF00A1F14D00A001AF477 /* OrganisationsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCBF0091F14D00A001AF477 /* OrganisationsCell.swift */; };
+		3DE1FA6A1F1671B70024EF11 /* OrganizationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE1FA691F1671B70024EF11 /* OrganizationViewModel.swift */; };
+		3DE1FA6C1F1675090024EF11 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE1FA6B1F1675090024EF11 /* Client.swift */; };
+		3DE1FA6E1F16820E0024EF11 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE1FA6D1F16820E0024EF11 /* UserViewModel.swift */; };
 		642782F70705730920EEB1CC /* Pods_EUMUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13425FD11BFA27D364130862 /* Pods_EUMUITests.framework */; };
 		6ADE3AEEBEFF678AA200D231 /* Pods_EUM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2686850232833DE23FDDEDA6 /* Pods_EUM.framework */; };
 		FF01CA232399AB5E4E2835FB /* Pods_EUMTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9A7B5400F4C566F3342F80B /* Pods_EUMTests.framework */; };
@@ -72,6 +75,9 @@
 		3DCBEFF81F14C351001AF477 /* EUMUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EUMUITests.swift; sourceTree = "<group>"; };
 		3DCBEFFA1F14C351001AF477 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3DCBF0091F14D00A001AF477 /* OrganisationsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganisationsCell.swift; sourceTree = "<group>"; };
+		3DE1FA691F1671B70024EF11 /* OrganizationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationViewModel.swift; sourceTree = "<group>"; };
+		3DE1FA6B1F1675090024EF11 /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
+		3DE1FA6D1F16820E0024EF11 /* UserViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		47A3956202C796A139FE3A93 /* Pods-EUMTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EUMTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EUMTests/Pods-EUMTests.release.xcconfig"; sourceTree = "<group>"; };
 		5FD28BC2091519370F361284 /* Pods-EUMUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EUMUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EUMUITests/Pods-EUMUITests.release.xcconfig"; sourceTree = "<group>"; };
 		71C5F25502AD334C84F05323 /* Pods-EUMTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EUMTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EUMTests/Pods-EUMTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -121,8 +127,8 @@
 			isa = PBXGroup;
 			children = (
 				3DBD12951F14D56D007ED759 /* OrganisationsViewController.swift */,
-				3DBD129F1F14DC80007ED759 /* MembershipsViewController.swift */,
 				3DBD12A31F14E85F007ED759 /* UsersViewController.swift */,
+				3DBD129F1F14DC80007ED759 /* MembershipsViewController.swift */,
 				3DBD12A61F14EFAF007ED759 /* AddingConfirmationViewController.swift */,
 			);
 			name = ViewControllers;
@@ -141,6 +147,7 @@
 		3DBD12A81F14F432007ED759 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				3DE1FA6B1F1675090024EF11 /* Client.swift */,
 				3DBD12A91F14F44D007ED759 /* Shared.swift */,
 			);
 			name = Shared;
@@ -171,13 +178,12 @@
 		3DCBEFD71F14C351001AF477 /* EUM */ = {
 			isa = PBXGroup;
 			children = (
+				3DBD12971F14D7F1007ED759 /* Models */,
+				3DE1FA671F165D2F0024EF11 /* View */,
+				3DE1FA681F165D690024EF11 /* ViewModel */,
 				3DBD12A51F14EC33007ED759 /* Supporting files */,
 				3DBD12A81F14F432007ED759 /* Shared */,
-				3DBD12981F14D7F8007ED759 /* ViewControllers */,
-				3DBD12971F14D7F1007ED759 /* Models */,
 				3DCBF0081F14CFCC001AF477 /* TableViewCells */,
-				3DCBEFE11F14C351001AF477 /* LaunchScreen.storyboard */,
-				3DCBEFDC1F14C351001AF477 /* Main.storyboard */,
 			);
 			path = EUM;
 			sourceTree = "<group>";
@@ -207,6 +213,25 @@
 				3DBD12A11F14E2A0007ED759 /* UsersCell.swift */,
 			);
 			name = TableViewCells;
+			sourceTree = "<group>";
+		};
+		3DE1FA671F165D2F0024EF11 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3DBD12981F14D7F8007ED759 /* ViewControllers */,
+				3DCBEFDC1F14C351001AF477 /* Main.storyboard */,
+				3DCBEFE11F14C351001AF477 /* LaunchScreen.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		3DE1FA681F165D690024EF11 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3DE1FA691F1671B70024EF11 /* OrganizationViewModel.swift */,
+				3DE1FA6D1F16820E0024EF11 /* UserViewModel.swift */,
+			);
+			name = ViewModel;
 			sourceTree = "<group>";
 		};
 		571C18BA914A7B51B458135C /* Pods */ = {
@@ -521,8 +546,11 @@
 				3DBD129A1F14D875007ED759 /* Organization.swift in Sources */,
 				3DBD129C1F14D9A9007ED759 /* User.swift in Sources */,
 				3DBD12A71F14EFAF007ED759 /* AddingConfirmationViewController.swift in Sources */,
+				3DE1FA6E1F16820E0024EF11 /* UserViewModel.swift in Sources */,
 				3DBD12A21F14E2A0007ED759 /* UsersCell.swift in Sources */,
+				3DE1FA6C1F1675090024EF11 /* Client.swift in Sources */,
 				3DCBEFD91F14C351001AF477 /* AppDelegate.swift in Sources */,
+				3DE1FA6A1F1671B70024EF11 /* OrganizationViewModel.swift in Sources */,
 				3DBD12A01F14DC80007ED759 /* MembershipsViewController.swift in Sources */,
 				3DBD12A41F14E85F007ED759 /* UsersViewController.swift in Sources */,
 				3DBD12AA1F14F44D007ED759 /* Shared.swift in Sources */,

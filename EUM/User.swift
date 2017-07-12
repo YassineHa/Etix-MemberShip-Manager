@@ -13,5 +13,4 @@ struct User{
 
     let id: Int             // id of the user
     let name: String        // name of the user
-
 }
