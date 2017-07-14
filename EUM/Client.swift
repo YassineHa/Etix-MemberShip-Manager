@@ -142,13 +142,12 @@ class Client: NSObject {
         Alamofire.request(deleteUrl!, method: .delete)
             .responseJSON { response in
                 if let error = response.result.error {
-                    // got an error while deleting, need to handle it
                     print(error)
                 } else {
-                    print("delete ok")
+                    print("membership deleted")
                 }
         }
-}
+    }
  
     //searching a membership by user and organization id and returning its id
     func searchMemberShipIdByUserIdAndOrgId(user_id:Int,organization_id:Int) -> Int {
