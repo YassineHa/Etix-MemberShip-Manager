@@ -67,7 +67,7 @@ example:
 ### To do (perspective)
 
  - Write MORE Tests
- - Add a offline mode
+ - Add an offline mode
 
    [Client.swift]: <https://github.com/YassineHa/Etix-MemberShip-Manager/blob/master/EUM/Client.swift>
    [UsersViewController]: <https://github.com/YassineHa/Etix-MemberShip-Manager/blob/master/EUM/UsersViewController.swift>
