@@ -1,6 +1,6 @@
 # EUM (Etix Users Manager)
 
-[![N|Solid](https://www.siliconluxembourg.lu/wp-content/uploads/2016/10/Etix_Everywhere_Logo-400x300.png)](https://nodesource.com/products/nsolid)
+
 
 For the rewrite of our rights system, this iOS app manages which user belongs to which organization.
 this app provides a page that lists, for a given organization, the users that belong to it.
