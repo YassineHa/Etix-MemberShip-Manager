@@ -1,27 +1,30 @@
 //
-//  EUMTests.swift
-//  EUMTests
+//  OrganizationTests.swift
+//  OrganizationTests
 //
-//  Created by Yassine-Ha on 11/07/2017.
+//  Created by Yassine-Ha on 14/07/2017.
 //  Copyright © 2017 YassineHa. All rights reserved.
 //
 
 import XCTest
-import Alamofire
-@testable import EUM
 
-
-class EUMTests: XCTestCase {
+class OrganizationTests: XCTestCase {
     
+    var organization : Organization!
+    var organizationViewModel : OrganizationViewModel!
     
     override func setUp() {
         super.setUp()
+        organization = Organization(anId: 2, aName: "Tesla")
+        organizationViewModel = OrganizationViewModel(anOrganization: organization)
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
+        organization = nil
+        organizationViewModel = nil
     }
     
     func testExample() {
@@ -35,5 +38,11 @@ class EUMTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
+    
+    func testSportFasterThanJeep() {
+        XCTAssertEqual(organizationViewModel.nameText, "Name: Tesla")
+    }
+    
+   
     
 }

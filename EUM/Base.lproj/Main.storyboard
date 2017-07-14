@@ -55,12 +55,12 @@
                     <navigationItem key="navigationItem" id="vpk-CP-gtN"/>
                     <connections>
                         <outlet property="organisationTableView" destination="ehI-3S-Tqb" id="zKi-cA-Rsm"/>
-                        <outlet property="organizationViewModel" destination="L3q-QR-q5i" id="GvM-Sw-a6S"/>
+                        <outlet property="organizationsManager" destination="L3q-QR-q5i" id="bAp-vr-3Nk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <customObject id="dJz-4h-Jsy" customClass="Client" customModule="EUM" customModuleProvider="target"/>
-                <customObject id="L3q-QR-q5i" customClass="OrganizationViewModel" customModule="EUM" customModuleProvider="target">
+                <customObject id="L3q-QR-q5i" customClass="OrganizationsManager" customModule="EUM" customModuleProvider="target">
                     <connections>
                         <outlet property="client" destination="dJz-4h-Jsy" id="pIx-l4-p4Z"/>
                     </connections>
@@ -122,11 +122,19 @@
                         <barButtonItem key="leftBarButtonItem" title="Back" id="Gha-Ds-1Yf"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="client" destination="94d-4z-VWO" id="kfD-rK-97v"/>
                         <outlet property="membershipsTableView" destination="zXl-6G-p0g" id="bP7-tq-MS6"/>
                         <outlet property="navBarTitle" destination="zeD-hv-B1t" id="wAL-jd-jCJ"/>
+                        <outlet property="usersManager" destination="Dl3-m0-td7" id="Aaa-xo-kA3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jOd-Fb-ow3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="94d-4z-VWO" customClass="Client" customModule="EUM" customModuleProvider="target"/>
+                <customObject id="Dl3-m0-td7" customClass="UsersManager" customModule="EUM" customModuleProvider="target">
+                    <connections>
+                        <outlet property="client" destination="94d-4z-VWO" id="uhK-eQ-eBJ"/>
+                    </connections>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="1528.8" y="790.25487256371821"/>
         </scene>
@@ -178,12 +186,12 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="userViewModel" destination="6Es-eA-56M" id="qVP-5C-aol"/>
+                        <outlet property="usersManager" destination="6Es-eA-56M" id="1SM-uJ-zFn"/>
                         <outlet property="usersTableView" destination="gM2-wg-JhE" id="kjz-95-V4v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dht-A3-2Xd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="6Es-eA-56M" customClass="UserViewModel" customModule="EUM" customModuleProvider="target">
+                <customObject id="6Es-eA-56M" customClass="UsersManager" customModule="EUM" customModuleProvider="target">
                     <connections>
                         <outlet property="client" destination="mEk-dE-6HP" id="DZ5-ct-nDF"/>
                     </connections>
@@ -303,12 +311,14 @@
                     </view>
                     <connections>
                         <outlet property="cancelBtn" destination="uWF-Ql-u3e" id="Obq-Ek-fr8"/>
+                        <outlet property="client" destination="npO-Tv-qAF" id="N89-yo-BpT"/>
                         <outlet property="confirmBtn" destination="0Wk-7u-VPy" id="2v8-ie-LjZ"/>
                         <outlet property="mainView" destination="3WX-Ae-VAY" id="xMy-we-j7V"/>
                         <outlet property="warningText" destination="8qZ-Y2-KeV" id="ccT-N6-iE9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2mp-pb-A6D" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="npO-Tv-qAF" customClass="Client" customModule="EUM" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="2877.5999999999999" y="789.35532233883066"/>
         </scene>

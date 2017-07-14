@@ -2,39 +2,26 @@
 //  OrganizationViewModel.swift
 //  EUM
 //
-//  Created by Yassine-Ha on 12/07/2017.
+//  Created by Yassine-Ha on 14/07/2017.
 //  Copyright © 2017 YassineHa. All rights reserved.
 //
 
 import UIKit
 
+// the Organization View model for the MVVM patern
 class OrganizationViewModel: NSObject {
+
+    var organization : Organization = Organization(anId: 0, aName: "")
     
-    @IBOutlet var client : Client!
-    
-    // list of all the Organizations
-    var organisations = [Organization]()
-    
-    //fetching all the  Organizations by completion (function wrapped up into a parameter)
-    func fetchOrganizations(completion : @escaping () ->()) {
-        client.fetchAndAddOrganisations {
-            organisations in self.organisations = organisations ?? [Organization]()
-            completion()
-        }
+    override init() {
+         super.init()
     }
     
-    //return the number of Organization item
-    func numberOfItemsInSection(section: Int) -> Int {
-        return organisations.count
+     init(anOrganization: Organization) {
+        organization = anOrganization
     }
-    
-    // fill the shared selected Organization
-    func fillSharedSelectedOrganization(indexPath : IndexPath){
-       Shared.sharedInstance.selectedOrganization = organisations[indexPath.row]
-    }
-    
-    //return the organization name per indexPath
-    func titleForItemAtIndexPath(indexPath : IndexPath) -> String {
-        return organisations[indexPath.row].name
+  
+    var nameText : String? {
+        return ("Name: \(organization.name)")
     }
 }

@@ -16,10 +16,10 @@ struct Shared {
     static var sharedInstance = Shared()
    
     // the current selected User to add
-    var selectedUser = User(id: 0, name: "")
+    var selectedUser = User(anId: 0, aName: "")
     
     // the current selected Organization to display its members
-    var selectedOrganization = Organization(id: 0, name: "")
+    var selectedOrganization = Organization(anId: 0, aName: "")
     
     // the list of users that are members of the selected organization
     var usersByOrganization = [User]()
@@ -28,5 +28,4 @@ struct Shared {
     let usersUrl = URL(string: "http://localhost:3000/users")                   // url of the Json Users
     let membershipsUrl = URL(string: "http://localhost:3000/memberships")       // url of the Json MemberShips
     let organizationsUrl = URL(string: "http://localhost:3000/organizations")   // url of the Json Organizations
-
 }

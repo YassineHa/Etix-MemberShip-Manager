@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Alamofire
 
 
 // The PopUp of confirmation when adding a User to a specific Organization
@@ -17,6 +16,8 @@ class AddingConfirmationViewController: UIViewController {
     @IBOutlet weak var cancelBtn: UIButton!
     @IBOutlet weak var confirmBtn: UIButton!
     @IBOutlet weak var warningText: UILabel!
+    
+    @IBOutlet var client : Client!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,14 +47,8 @@ class AddingConfirmationViewController: UIViewController {
 
     @IBAction func ConfirmAction(_ sender: Any) {
 
-        // the new MemberShip  to post and add in the json DB
-        let newMembership = ["user_id": Shared.sharedInstance.selectedUser.id, "organization_id": Shared.sharedInstance.selectedOrganization.id]
-       
-        // simple Post request
-        Alamofire.request(Shared.sharedInstance.membershipsUrl!, method: .post, parameters: newMembership, encoding: JSONEncoding.default)
-            .responseJSON { response in
-                debugPrint(response)
-        }
+        //adding a memberShip 
+        client.addMembership(user_id: Shared.sharedInstance.selectedUser.id,organization_id: Shared.sharedInstance.selectedOrganization.id)
         
         // returning the MemberShip view Controller
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -61,4 +56,6 @@ class AddingConfirmationViewController: UIViewController {
         self.present(membershipsViewController, animated: true, completion: nil)
         
     }
+    
+    
 }

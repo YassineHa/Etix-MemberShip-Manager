@@ -8,9 +8,15 @@
 
 import UIKit
 
-// model of the user (struct for passing by values and not by references)
-struct User{
+// model of the user
+class User{
 
     let id: Int             // id of the user
     let name: String        // name of the user
+    
+    //init of the user Model
+    init(anId:Int, aName:String){
+        id = anId
+        name = aName
+    }
 }

@@ -48,6 +48,16 @@
                ReferencedContainer = "container:EUM.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "3D408CB11F18C2EB00078AC0"
+               BuildableName = "OrganizationTests.xctest"
+               BlueprintName = "OrganizationTests"
+               ReferencedContainer = "container:EUM.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

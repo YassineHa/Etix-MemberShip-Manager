@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D408CA81F18B4A300078AC0 /* OrganizationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D408CA71F18B4A300078AC0 /* OrganizationViewModel.swift */; };
+		3D408CAA1F18B4BD00078AC0 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D408CA91F18B4BD00078AC0 /* UserViewModel.swift */; };
+		3D408CAC1F18B4CC00078AC0 /* MembershipViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D408CAB1F18B4CC00078AC0 /* MembershipViewModel.swift */; };
+		3D408CB51F18C2EB00078AC0 /* OrganizationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D408CB41F18C2EB00078AC0 /* OrganizationTests.swift */; };
+		3D5A25441F18FA9700FC668E /* OrganizationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D408CA71F18B4A300078AC0 /* OrganizationViewModel.swift */; };
+		3D5A25451F18FB5200FC668E /* Organization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBD12991F14D875007ED759 /* Organization.swift */; };
 		3DBD12961F14D56D007ED759 /* OrganisationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBD12951F14D56D007ED759 /* OrganisationsViewController.swift */; };
 		3DBD129A1F14D875007ED759 /* Organization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBD12991F14D875007ED759 /* Organization.swift */; };
 		3DBD129C1F14D9A9007ED759 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBD129B1F14D9A9007ED759 /* User.swift */; };
@@ -23,15 +29,22 @@
 		3DCBEFEE1F14C351001AF477 /* EUMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCBEFED1F14C351001AF477 /* EUMTests.swift */; };
 		3DCBEFF91F14C351001AF477 /* EUMUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCBEFF81F14C351001AF477 /* EUMUITests.swift */; };
 		3DCBF00A1F14D00A001AF477 /* OrganisationsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCBF0091F14D00A001AF477 /* OrganisationsCell.swift */; };
-		3DE1FA6A1F1671B70024EF11 /* OrganizationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE1FA691F1671B70024EF11 /* OrganizationViewModel.swift */; };
+		3DE1FA6A1F1671B70024EF11 /* OrganizationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE1FA691F1671B70024EF11 /* OrganizationsManager.swift */; };
 		3DE1FA6C1F1675090024EF11 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE1FA6B1F1675090024EF11 /* Client.swift */; };
-		3DE1FA6E1F16820E0024EF11 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE1FA6D1F16820E0024EF11 /* UserViewModel.swift */; };
+		3DE1FA6E1F16820E0024EF11 /* UsersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE1FA6D1F16820E0024EF11 /* UsersManager.swift */; };
 		642782F70705730920EEB1CC /* Pods_EUMUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13425FD11BFA27D364130862 /* Pods_EUMUITests.framework */; };
 		6ADE3AEEBEFF678AA200D231 /* Pods_EUM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2686850232833DE23FDDEDA6 /* Pods_EUM.framework */; };
 		FF01CA232399AB5E4E2835FB /* Pods_EUMTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9A7B5400F4C566F3342F80B /* Pods_EUMTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		3D408CB71F18C2EB00078AC0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3DCBEFCD1F14C351001AF477 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3DCBEFD41F14C351001AF477;
+			remoteInfo = EUM;
+		};
 		3DCBEFEA1F14C351001AF477 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3DCBEFCD1F14C351001AF477 /* Project object */;
@@ -53,6 +66,12 @@
 		2686850232833DE23FDDEDA6 /* Pods_EUM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EUM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		28E20BC5113B4DC090E3FF45 /* Pods-EUMUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EUMUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EUMUITests/Pods-EUMUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		3BB44B1D084F6E08151D1F13 /* Pods-EUM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EUM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EUM/Pods-EUM.debug.xcconfig"; sourceTree = "<group>"; };
+		3D408CA71F18B4A300078AC0 /* OrganizationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationViewModel.swift; sourceTree = "<group>"; };
+		3D408CA91F18B4BD00078AC0 /* UserViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		3D408CAB1F18B4CC00078AC0 /* MembershipViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MembershipViewModel.swift; sourceTree = "<group>"; };
+		3D408CB21F18C2EB00078AC0 /* OrganizationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrganizationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D408CB41F18C2EB00078AC0 /* OrganizationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationTests.swift; sourceTree = "<group>"; };
+		3D408CB61F18C2EB00078AC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3DBD12951F14D56D007ED759 /* OrganisationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganisationsViewController.swift; sourceTree = "<group>"; };
 		3DBD12991F14D875007ED759 /* Organization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Organization.swift; sourceTree = "<group>"; };
 		3DBD129B1F14D9A9007ED759 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -75,9 +94,9 @@
 		3DCBEFF81F14C351001AF477 /* EUMUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EUMUITests.swift; sourceTree = "<group>"; };
 		3DCBEFFA1F14C351001AF477 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3DCBF0091F14D00A001AF477 /* OrganisationsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganisationsCell.swift; sourceTree = "<group>"; };
-		3DE1FA691F1671B70024EF11 /* OrganizationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationViewModel.swift; sourceTree = "<group>"; };
+		3DE1FA691F1671B70024EF11 /* OrganizationsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationsManager.swift; sourceTree = "<group>"; };
 		3DE1FA6B1F1675090024EF11 /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
-		3DE1FA6D1F16820E0024EF11 /* UserViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		3DE1FA6D1F16820E0024EF11 /* UsersManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersManager.swift; sourceTree = "<group>"; };
 		47A3956202C796A139FE3A93 /* Pods-EUMTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EUMTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EUMTests/Pods-EUMTests.release.xcconfig"; sourceTree = "<group>"; };
 		5FD28BC2091519370F361284 /* Pods-EUMUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EUMUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EUMUITests/Pods-EUMUITests.release.xcconfig"; sourceTree = "<group>"; };
 		71C5F25502AD334C84F05323 /* Pods-EUMTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EUMTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EUMTests/Pods-EUMTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -86,6 +105,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		3D408CAF1F18C2EB00078AC0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3DCBEFD21F14C351001AF477 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -113,6 +139,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D408CAD1F18BFF700078AC0 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				3DE1FA691F1671B70024EF11 /* OrganizationsManager.swift */,
+				3DE1FA6D1F16820E0024EF11 /* UsersManager.swift */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
+		3D408CB31F18C2EB00078AC0 /* OrganizationTests */ = {
+			isa = PBXGroup;
+			children = (
+				3D408CB41F18C2EB00078AC0 /* OrganizationTests.swift */,
+				3D408CB61F18C2EB00078AC0 /* Info.plist */,
+			);
+			path = OrganizationTests;
+			sourceTree = "<group>";
+		};
 		3DBD12971F14D7F1007ED759 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,8 +171,8 @@
 			isa = PBXGroup;
 			children = (
 				3DBD12951F14D56D007ED759 /* OrganisationsViewController.swift */,
-				3DBD12A31F14E85F007ED759 /* UsersViewController.swift */,
 				3DBD129F1F14DC80007ED759 /* MembershipsViewController.swift */,
+				3DBD12A31F14E85F007ED759 /* UsersViewController.swift */,
 				3DBD12A61F14EFAF007ED759 /* AddingConfirmationViewController.swift */,
 			);
 			name = ViewControllers;
@@ -159,6 +203,7 @@
 				3DCBEFD71F14C351001AF477 /* EUM */,
 				3DCBEFEC1F14C351001AF477 /* EUMTests */,
 				3DCBEFF71F14C351001AF477 /* EUMUITests */,
+				3D408CB31F18C2EB00078AC0 /* OrganizationTests */,
 				3DCBEFD61F14C351001AF477 /* Products */,
 				571C18BA914A7B51B458135C /* Pods */,
 				A0DE3CBE234A82B8CB9E3F66 /* Frameworks */,
@@ -171,6 +216,7 @@
 				3DCBEFD51F14C351001AF477 /* EUM.app */,
 				3DCBEFE91F14C351001AF477 /* EUMTests.xctest */,
 				3DCBEFF41F14C351001AF477 /* EUMUITests.xctest */,
+				3D408CB21F18C2EB00078AC0 /* OrganizationTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -228,8 +274,10 @@
 		3DE1FA681F165D690024EF11 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				3DE1FA691F1671B70024EF11 /* OrganizationViewModel.swift */,
-				3DE1FA6D1F16820E0024EF11 /* UserViewModel.swift */,
+				3D408CAD1F18BFF700078AC0 /* Managers */,
+				3D408CA71F18B4A300078AC0 /* OrganizationViewModel.swift */,
+				3D408CA91F18B4BD00078AC0 /* UserViewModel.swift */,
+				3D408CAB1F18B4CC00078AC0 /* MembershipViewModel.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -260,6 +308,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		3D408CB11F18C2EB00078AC0 /* OrganizationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3D408CB91F18C2EB00078AC0 /* Build configuration list for PBXNativeTarget "OrganizationTests" */;
+			buildPhases = (
+				3D408CAE1F18C2EB00078AC0 /* Sources */,
+				3D408CAF1F18C2EB00078AC0 /* Frameworks */,
+				3D408CB01F18C2EB00078AC0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3D408CB81F18C2EB00078AC0 /* PBXTargetDependency */,
+			);
+			name = OrganizationTests;
+			productName = OrganizationTests;
+			productReference = 3D408CB21F18C2EB00078AC0 /* OrganizationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		3DCBEFD41F14C351001AF477 /* EUM */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3DCBEFFD1F14C351001AF477 /* Build configuration list for PBXNativeTarget "EUM" */;
@@ -332,6 +398,12 @@
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = YassineHa;
 				TargetAttributes = {
+					3D408CB11F18C2EB00078AC0 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 9BC4NY7H6Z;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 3DCBEFD41F14C351001AF477;
+					};
 					3DCBEFD41F14C351001AF477 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = 9BC4NY7H6Z;
@@ -367,11 +439,19 @@
 				3DCBEFD41F14C351001AF477 /* EUM */,
 				3DCBEFE81F14C351001AF477 /* EUMTests */,
 				3DCBEFF31F14C351001AF477 /* EUMUITests */,
+				3D408CB11F18C2EB00078AC0 /* OrganizationTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		3D408CB01F18C2EB00078AC0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3DCBEFD31F14C351001AF477 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -537,22 +617,35 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		3D408CAE1F18C2EB00078AC0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D408CB51F18C2EB00078AC0 /* OrganizationTests.swift in Sources */,
+				3D5A25451F18FB5200FC668E /* Organization.swift in Sources */,
+				3D5A25441F18FA9700FC668E /* OrganizationViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3DCBEFD11F14C351001AF477 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				3DCBF00A1F14D00A001AF477 /* OrganisationsCell.swift in Sources */,
+				3D408CA81F18B4A300078AC0 /* OrganizationViewModel.swift in Sources */,
 				3DBD12961F14D56D007ED759 /* OrganisationsViewController.swift in Sources */,
 				3DBD129A1F14D875007ED759 /* Organization.swift in Sources */,
 				3DBD129C1F14D9A9007ED759 /* User.swift in Sources */,
 				3DBD12A71F14EFAF007ED759 /* AddingConfirmationViewController.swift in Sources */,
-				3DE1FA6E1F16820E0024EF11 /* UserViewModel.swift in Sources */,
+				3DE1FA6E1F16820E0024EF11 /* UsersManager.swift in Sources */,
 				3DBD12A21F14E2A0007ED759 /* UsersCell.swift in Sources */,
 				3DE1FA6C1F1675090024EF11 /* Client.swift in Sources */,
+				3D408CAA1F18B4BD00078AC0 /* UserViewModel.swift in Sources */,
 				3DCBEFD91F14C351001AF477 /* AppDelegate.swift in Sources */,
-				3DE1FA6A1F1671B70024EF11 /* OrganizationViewModel.swift in Sources */,
+				3DE1FA6A1F1671B70024EF11 /* OrganizationsManager.swift in Sources */,
 				3DBD12A01F14DC80007ED759 /* MembershipsViewController.swift in Sources */,
 				3DBD12A41F14E85F007ED759 /* UsersViewController.swift in Sources */,
+				3D408CAC1F18B4CC00078AC0 /* MembershipViewModel.swift in Sources */,
 				3DBD12AA1F14F44D007ED759 /* Shared.swift in Sources */,
 				3DBD129E1F14DA04007ED759 /* Membership.swift in Sources */,
 			);
@@ -577,6 +670,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		3D408CB81F18C2EB00078AC0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3DCBEFD41F14C351001AF477 /* EUM */;
+			targetProxy = 3D408CB71F18C2EB00078AC0 /* PBXContainerItemProxy */;
+		};
 		3DCBEFEB1F14C351001AF477 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 3DCBEFD41F14C351001AF477 /* EUM */;
@@ -609,6 +707,34 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		3D408CBA1F18C2EB00078AC0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 9BC4NY7H6Z;
+				INFOPLIST_FILE = OrganizationTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.happs.OrganizationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EUM.app/EUM";
+			};
+			name = Debug;
+		};
+		3D408CBB1F18C2EB00078AC0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 9BC4NY7H6Z;
+				INFOPLIST_FILE = OrganizationTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.happs.OrganizationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EUM.app/EUM";
+			};
+			name = Release;
+		};
 		3DCBEFFB1F14C351001AF477 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -795,6 +921,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3D408CB91F18C2EB00078AC0 /* Build configuration list for PBXNativeTarget "OrganizationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D408CBA1F18C2EB00078AC0 /* Debug */,
+				3D408CBB1F18C2EB00078AC0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		3DCBEFD01F14C351001AF477 /* Build configuration list for PBXProject "EUM" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
