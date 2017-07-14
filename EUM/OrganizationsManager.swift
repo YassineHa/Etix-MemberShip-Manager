@@ -8,7 +8,7 @@
 
 import UIKit
 
-// organization manager which manage the list of organizations
+// organization manager which manages the list of organizations
 class OrganizationsManager: NSObject {
     
     @IBOutlet var client : Client!
@@ -16,7 +16,7 @@ class OrganizationsManager: NSObject {
     // list of all the Organizations
     var organisations = [Organization]()
     
-    //fetching all the  Organizations by completion (function wrapped up into a parameter)
+    // fetching all the Organizations by completion (function wrapped up into a parameter)
     func fetchOrganizations(completion : @escaping () ->()) {
         client.fetchAndAddOrganisations {
             organisations in self.organisations = organisations ?? [Organization]()
@@ -24,7 +24,7 @@ class OrganizationsManager: NSObject {
         }
     }
     
-    //return the number of Organizations item
+    // return the number of Organizations items
     func numberOfItemsInSection(section: Int) -> Int {
         return organisations.count
     }
@@ -34,7 +34,7 @@ class OrganizationsManager: NSObject {
        Shared.sharedInstance.selectedOrganization = organisations[indexPath.row]
     }
     
-    //return the organization name per indexPath
+    // return the organization name per indexPath
     func organisationsForItemAtIndexPath(indexPath : IndexPath) -> Organization {
         return organisations[indexPath.row]
     }

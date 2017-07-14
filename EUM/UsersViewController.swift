@@ -8,10 +8,10 @@
 import UIKit
 
 
-// Users View Controller which displays the available users for the selected Organization
+// Users View Controller which displays the available users to add for the selected Organization
 class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
-    // the current User Manager who calls th View Model for the MVVM patern
+    // the current User Manager who calls the View Model for the MVVM pattern
     @IBOutlet var usersManager : UsersManager!
     
     // the current TableView
@@ -33,7 +33,7 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
     }
   
-    //_Table View Functions
+    // Table View Functions
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return usersManager.numberOfItemsInSection(section: section)      // the number of rows in the table View
@@ -41,10 +41,10 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        //init the cell as a UsersCell
+        // init the cell as a UsersCell
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! UsersCell
         
-        //instantiate the User view model to fetch it into the cell
+        // instantiate the User view model to fetch it into the cell
         let userViewModel : UserViewModel
         userViewModel = UserViewModel(aUser: usersManager.userForItemAtIndexPath(indexPath: indexPath))
         

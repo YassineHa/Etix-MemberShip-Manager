@@ -78,7 +78,7 @@ class Client: NSObject {
         }
     }
     
-    //adding a membership by passing its attributes( user_id,organization_id)
+    // adding a membership by passing its attributes( user_id, organization_id )
     func addMembership(user_id: Int, organization_id: Int) {
         
         // the new MemberShip  to post and add in the json DB

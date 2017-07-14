@@ -8,7 +8,7 @@
 
 import UIKit
 
-// model of the Membership (defines relationships betwen Organizations and users) (struct for passing by values and not by references)
+// model of the Membership (defines relationships betwen Organizations and users)
 class Membership {
     
     let id: Int                     // id of the membership

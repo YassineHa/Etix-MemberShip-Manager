@@ -12,7 +12,7 @@ import UIKit
 // Organisation View Controller which displays all the Organizations
 class OrganisationsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    // the current Organization Manager who calls th View Model for the MVVM patern
+    // the current Organization Manager which calls the View Model for the MVVM pattern
     @IBOutlet var organizationsManager : OrganizationsManager!
     
     // the current TableView
@@ -41,10 +41,10 @@ class OrganisationsViewController: UIViewController, UITableViewDelegate, UITabl
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        //init the cell as a OrganisationsCell
+        // init the cell as a OrganisationsCell
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! OrganisationsCell
     
-        //instantiate the Organization view model to fetch it into the cell
+        // instantiate the Organization view model to fetch it into the cell
         let organizationViewModel : OrganizationViewModel
         organizationViewModel = OrganizationViewModel(anOrganization: organizationsManager.organisationsForItemAtIndexPath(indexPath: indexPath))
         

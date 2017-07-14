@@ -47,7 +47,7 @@ class AddingConfirmationViewController: UIViewController {
 
     @IBAction func ConfirmAction(_ sender: Any) {
 
-        //adding a memberShip 
+        // adding a memberShip 
         client.addMembership(user_id: Shared.sharedInstance.selectedUser.id,organization_id: Shared.sharedInstance.selectedOrganization.id)
         
         // returning the MemberShip view Controller

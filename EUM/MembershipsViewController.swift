@@ -13,7 +13,7 @@ import UIKit
 // MemberShip View Controller which displays the selected Organization's Users
 class MembershipsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-     // the current User Manager who calls th View Model for the MVVM patern
+     // the current User Manager who calls the View Model for the MVVM pattern
     @IBOutlet var usersManager : UsersManager!
     
     // the client which contains all the alamofire Methods
@@ -22,7 +22,7 @@ class MembershipsViewController: UIViewController, UITableViewDelegate, UITableV
     // the current TableView
     @IBOutlet weak var membershipsTableView: UITableView!
     
-    // the navigation Bar title  which displays the Organization Name
+    // the navigation Bar title which displays the Organization Name
     @IBOutlet weak var navBarTitle: UINavigationItem!
 
     // the cell identifier
@@ -54,11 +54,11 @@ class MembershipsViewController: UIViewController, UITableViewDelegate, UITableV
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        //init the cell as a UsersCell
+        // init the cell as a UsersCell
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! UsersCell
         
         
-        //instantiate the User view model to fetch it into the cell
+        // instantiate the User view model to fetch it into the cell
         let userViewModel : UserViewModel
         userViewModel = UserViewModel(aUser: usersManager.userForItemAtIndexPath(indexPath: indexPath))
         
@@ -81,16 +81,16 @@ class MembershipsViewController: UIViewController, UITableViewDelegate, UITableV
         return true
     }
     
-    // the swipe editiong Style for Delete
+    // the swipe editing Style for Delete
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         
-        //Deleteing a membership
+        // Deleteing a membership
         client.DeleteMemberShip(deletedMembershipId: client.searchMemberShipIdByUserIdAndOrgId(user_id: UserViewModel(aUser: usersManager.userForItemAtIndexPath(indexPath: indexPath)).userId!, organization_id: Shared.sharedInstance.selectedOrganization.id))
         
         // update the list of users by removing the user
         usersManager.removeItemAtIndexPath(indexPath: indexPath)
         
-        //fill the shared list of useres
+        // fill the shared list of users
         usersManager.fillSharedlistOfUsers()
         
         // reload the data in the current tableView

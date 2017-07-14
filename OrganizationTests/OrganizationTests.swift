@@ -43,6 +43,9 @@ class OrganizationTests: XCTestCase {
         XCTAssertEqual(organizationViewModel.nameText, "Name: Tesla")
     }
     
+
+    
+    
    
     
 }
