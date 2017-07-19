@@ -84,8 +84,15 @@ class MembershipsViewController: UIViewController, UITableViewDelegate, UITableV
     // the swipe editing Style for Delete
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         
+        
+        client.searchMemberShipIdByUserIdAndOrgId(user_id: UserViewModel(aUser: usersManager.userForItemAtIndexPath(indexPath: indexPath)).userId!, organization_id: Shared.sharedInstance.selectedOrganization.id){
+            
+            (searchedMembershipId: Int) in
+            
+            self.client.DeleteMemberShip(deletedMembershipId: searchedMembershipId)
+        }
         // Deleteing a membership
-        client.DeleteMemberShip(deletedMembershipId: client.searchMemberShipIdByUserIdAndOrgId(user_id: UserViewModel(aUser: usersManager.userForItemAtIndexPath(indexPath: indexPath)).userId!, organization_id: Shared.sharedInstance.selectedOrganization.id))
+        client.DeleteMemberShip(deletedMembershipId: 1)
         
         // update the list of users by removing the user
         usersManager.removeItemAtIndexPath(indexPath: indexPath)

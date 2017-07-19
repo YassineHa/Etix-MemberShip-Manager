@@ -19,7 +19,7 @@ class UsersManager: NSObject {
     
     // fetching all the available users to add for a specific Organization by completion (function wrapped up into a parameter)
     func fetchAvailableUsers(completion : @escaping () ->()) {
-        client.fetchAndAddUsers {
+        client.fetchAndAddAvailableUsers {
             users in self.users = users ?? [User]()
             completion()
         }

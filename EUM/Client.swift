@@ -6,7 +6,7 @@
 //  Copyright © 2017 YassineHa. All rights reserved.
 //
 
-import UIKit
+
 import Alamofire
 import SwiftyJSON
 
@@ -14,7 +14,7 @@ import SwiftyJSON
 class Client: NSObject {
     
     // the JSON response which contains all the parsed data
-    var myResponse : JSON = nil
+    var myResponse = JSON.null
     
     // parsing and fetching all the organizations from The DB
     func fetchAndAddOrganisations(completion : @escaping ([Organization]?) -> ()) {
@@ -46,7 +46,7 @@ class Client: NSObject {
     
   
     // parsing and fetching all the available Users ( by looping all the users and subtract the shared list of users by selected Organization from all the users)
-    func fetchAndAddUsers(completion : @escaping ([User]?) -> ()) {
+    func fetchAndAddAvailableUsers(completion : @escaping ([User]?) -> ()) {
         var users = [User]()
         
         // simple alamofire Get request
@@ -88,6 +88,7 @@ class Client: NSObject {
         Alamofire.request(Shared.sharedInstance.membershipsUrl!, method: .post, parameters: newMembership, encoding: JSONEncoding.default)
             .responseJSON { response in
                 debugPrint(response)
+                
         }
     }
 
@@ -134,7 +135,7 @@ class Client: NSObject {
     
     // delete a membership by its id
     func DeleteMemberShip(deletedMembershipId: Int) {
-        
+       
         // the Url of the jsonObject to remove
         let deleteUrl = URL(string: "http://localhost:3000/memberships/\(deletedMembershipId)")
         
@@ -143,19 +144,15 @@ class Client: NSObject {
             .responseJSON { response in
                 if let error = response.result.error {
                     print(error)
-                } else {
-                    print("membership deleted")
                 }
         }
     }
  
     //searching a membership by user and organization id and returning its id
-    func searchMemberShipIdByUserIdAndOrgId(user_id:Int,organization_id:Int) -> Int {
-       
-        var searchedMembershipId : Int = 0
-        
+    func searchMemberShipIdByUserIdAndOrgId(user_id:Int,organization_id:Int,completion: @escaping (_: Int) -> Void){
+
         // simple alamofire get request
-        Alamofire.request(Shared.sharedInstance.baseUrl!).responseJSON { (response) in
+        Alamofire.request(Shared.sharedInstance.membershipsUrl!).responseJSON { (response) in
             switch response.result{
                 
             // in case of request success
@@ -163,20 +160,23 @@ class Client: NSObject {
                 self.myResponse = JSON(data)
                 
                 // looping the memberships
-                for MembershipItem in self.myResponse["memberships"].arrayValue {
+                for MembershipItem in self.myResponse.arrayValue {
                     
                     // checking if the organization id in the membership item is equal to the selected organization
-                    if(MembershipItem["organization_id"].intValue == organization_id && MembershipItem["user_id"].intValue == user_id){
-                        searchedMembershipId =  MembershipItem["id"].intValue
+                    if((MembershipItem["organization_id"].intValue == organization_id) && (MembershipItem["user_id"].intValue == user_id)){
+                        
+                      completion(MembershipItem["id"].intValue)
+                        
                     }
                 }
 
             case.failure(let error):
                 print("request failed with ",error)
+                completion(0)
             }
         }
         
-       return searchedMembershipId
+       
     }
     
 }

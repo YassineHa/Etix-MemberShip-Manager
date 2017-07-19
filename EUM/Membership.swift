@@ -6,7 +6,6 @@
 //  Copyright © 2017 YassineHa. All rights reserved.
 //
 
-import UIKit
 
 // model of the Membership (defines relationships betwen Organizations and users)
 class Membership {
